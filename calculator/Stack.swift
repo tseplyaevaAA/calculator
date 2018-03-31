@@ -8,8 +8,6 @@
 
 import Foundation
 
- // var mystack : Stack = Stack()
-
 enum Type{
     case value
     case operation
@@ -55,5 +53,15 @@ class Stack{
             print(item.date, item.type)
         }
     }
+    
+    func reverseStack()-> Stack {
+        let b : Stack = Stack()
+        while  self.isEmpty() != true {
+            let elem = self.pop()
+            b.push(elem)
+        }
+        return b
+    }
+
     
 }

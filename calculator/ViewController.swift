@@ -4,7 +4,7 @@
 //
 //  Created by Anastasia on 25/03/2018.
 //  Copyright © 2018 Anastasia. All rights reserved.
-//
+///Users/anastasia/Desktop/calculator/calculator/Counter.swift
 
 import UIKit
 
@@ -30,7 +30,27 @@ class ViewController: UIViewController {
     @IBAction func pressEight(_ sender: UIButton) {
         textField.text? += "8"
     }
+   
+    @IBAction func delAll(_ sender: UIButton) {
+        textField.text? = ""
+    }
     
+    @IBAction func count(_ sender: UIButton) {
+        let a: String = textField.text!
+        var str = ""
+        str = mainFunc(a: a)
+        if str == "error" {
+            
+       let alert = UIAlertController(title: "Error", message: "Incorrect arithmetic expression", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:nil))
+        present(alert, animated: true, completion: {
+                
+        })
+        textField.text = ""
+        }else{
+        textField.text = str
+        }
+    }
     
     @IBAction func pressNine(_ sender: UIButton) {
         textField.text? += "9"
@@ -101,14 +121,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func deleteLast(_ sender: UIButton) {
-      //  var str :String = ""
       var str = (textField.text)!
       if textField.text != "" {
             str.remove(at: str.index(before: str.endIndex))
             textField.text = str
         }
-        
-    }
+     }
     
     
 }

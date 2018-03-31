@@ -19,13 +19,11 @@ class Queue{
     
     func push(_ item: Double) {
         let a = Value(date:item, type: Type.value)
-        //   a.date = item.date
         items.append(a)
     }
     
     func pushchar(_ item:Double) {
         let a = Value(date:item, type: Type.operation)
-        //   a.date = item.date
         items.append(a)
     }
     
@@ -58,6 +56,21 @@ class Queue{
         }
         return newq
     }
+    
+    func reverseQueue(a: Queue) -> Queue{
+        let result : Queue = Queue()
+        for _ in 0...a.items.count-1 {
+            let zn = a.pop()
+            let c = zn.date
+            if IfValue(a: zn) == 1 {
+                result.push(c)
+            }else{
+                result.pushchar(c)
+            }
+        }
+        return result
+    }
+    
     
     
 }
