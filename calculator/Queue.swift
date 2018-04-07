@@ -58,11 +58,13 @@ class Queue{
     }
     
     func reverseQueue(a: Queue) -> Queue{
+        let action = Functionality()
+        
         let result : Queue = Queue()
         for _ in 0...a.items.count-1 {
             let zn = a.pop()
             let c = zn.date
-            if IfValue(a: zn) == 1 {
+            if action.IfValue(a: zn) == true {
                 result.push(c)
             }else{
                 result.pushchar(c)

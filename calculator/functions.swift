@@ -8,13 +8,16 @@
 
 import Foundation
 
-func IfValue(a:Value) -> Int {
+class Functionality {
+
+func IfValue(a:Value) -> Bool {
     if a.type == Type.value {
-        return 1}
+        return true}
     else{
-        return 0
+        return false
     }
 }
+    
 // check correctness
 func check (a: [String])-> Int {
     var k = 0
@@ -128,7 +131,7 @@ func reversePN(a: Queue)-> Queue {
         let elem: Value = a.pop()
         let c = elem.date
         
-        if  IfValue(a: elem) == 1 {
+        if  IfValue(a: elem) == true {
             result.push(c)
         }
         else{
@@ -231,10 +234,63 @@ func countStack(a: Stack)-> Double{
         }
     }
     return res.date
+
+    }
+    
+    
+    func mainFunc(a: String)-> String {
+        
+        var numbers = [String]()
+        var final : Double = 0.0
+        var answer: String = ""
+        
+        numbers = turnToStrings(a: a)
+        
+        if check(a: numbers) == 0 {
+            var myque : Queue = Queue()
+            myque = turnToQueue(a: numbers)
+            
+            // need to reverse queue
+            var myque2 : Queue = Queue()
+            myque2 = myque.reverseQueue(a: myque)
+            
+            let  result: Queue =  reversePN(a: myque2)
+            let result1 : Queue = Queue()
+            // result.show()
+            
+            let calc : Stack = Stack()
+            
+            while  result.isEmpty() == false {
+                let elem = result.pop()
+                calc.push(elem)
+                if IfValue(a: elem) == true {
+                    result1.push(elem.date)
+                }else{
+                    result1.pushchar(elem.date)
+                }
+                
+            }
+            
+            //calc.show()
+            var calc1 : Stack = Stack()
+            
+            calc1 = calc.reverseStack()
+            //print("      ")
+            // calc 1 is to calculate
+            //  calc1.show()
+            
+            final  = countStack(a: calc1)
+            answer = String(final)
+            
+        }else{
+            answer = "error"
+        }
+        return answer
+    }
+
+
+
 }
-
-
-
 
 
 

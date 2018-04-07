@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     
+    @IBOutlet weak var answerLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,22 +25,23 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func pressSeven(_ sender: UIButton) {
-        textField.text? += "7"
+   
+    @IBAction func addNumeral(_ sender: UIButton) {
+
+      textField.text? += sender.currentTitle!
     }
     
-    @IBAction func pressEight(_ sender: UIButton) {
-        textField.text? += "8"
-    }
-   
+    
     @IBAction func delAll(_ sender: UIButton) {
         textField.text? = ""
+        answerLabel.text? = ""
     }
     
     @IBAction func count(_ sender: UIButton) {
+        let action = Functionality()
         let a: String = textField.text!
         var str = ""
-        str = mainFunc(a: a)
+        str = action.mainFunc(a: a)
         if str == "error" {
             
        let alert = UIAlertController(title: "Error", message: "Incorrect arithmetic expression", preferredStyle: .alert)
@@ -47,78 +50,13 @@ class ViewController: UIViewController {
                 
         })
         textField.text = ""
+        answerLabel.text = ""
         }else{
-        textField.text = str
+        answerLabel.text = str
         }
     }
     
-    @IBAction func pressNine(_ sender: UIButton) {
-        textField.text? += "9"
-    }
-    
-    
-    @IBAction func pressFour(_ sender: UIButton) {
-         textField.text? += "4"
-    }
-    
-    @IBAction func pressFive(_ sender: UIButton) {
-        textField.text? += "5"
-    }
-    
-    
-    @IBAction func pressSix(_ sender: UIButton) {
-        textField.text? += "6"
-    }
-    
-    @IBAction func pressOne(_ sender: UIButton) {
-        textField.text? += "1"
-    }
-    
-    
-    @IBAction func pressTwo(_ sender: UIButton) {
-        textField.text? += "2"
-    }
-    
-    @IBAction func pressThree(_ sender: UIButton) {
-        textField.text? += "3"
-    }
-    
-    @IBAction func pressZero(_ sender: UIButton) {
-        textField.text? += "0"
-    }
-    
-    
-    @IBAction func pressPoint(_ sender: UIButton) {
-        textField.text? += "."
-    }
-    
-    
-    @IBAction func pressMul(_ sender: UIButton) {
-        textField.text? += "*"
-    }
-    
-    @IBAction func pressDiv(_ sender: UIButton) {
-        textField.text? += "/"
-    }
-    
-    
-    @IBAction func pressAdd(_ sender: UIButton) {
-        textField.text? += "+"
-    }
-    
-    
-    @IBAction func pressEr(_ sender: UIButton) {
-         textField.text? += "-"
-    }
-    
-    @IBAction func pressL(_ sender: UIButton) {
-        textField.text? += "("
-    }
-    
-    
-    @IBAction func pressR(_ sender: UIButton) {
-        textField.text? += ")"
-    }
+   
     
     @IBAction func deleteLast(_ sender: UIButton) {
       var str = (textField.text)!

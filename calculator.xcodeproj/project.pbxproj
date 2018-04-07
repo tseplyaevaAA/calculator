@@ -17,7 +17,6 @@
 		5D561FC120679A42002C9256 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D561FC020679A42002C9256 /* Stack.swift */; };
 		5D561FC32067BDED002C9256 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D561FC22067BDED002C9256 /* Queue.swift */; };
 		5D561FC52067D166002C9256 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D561FC42067D166002C9256 /* functions.swift */; };
-		5D719548206FFACD007156BD /* mainFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D719547206FFACD007156BD /* mainFunc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		5D561FC020679A42002C9256 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		5D561FC22067BDED002C9256 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		5D561FC42067D166002C9256 /* functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
-		5D719547206FFACD007156BD /* mainFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainFunc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +112,6 @@
 				5D561FC020679A42002C9256 /* Stack.swift */,
 				5D561FC22067BDED002C9256 /* Queue.swift */,
 				5D561FC42067D166002C9256 /* functions.swift */,
-				5D719547206FFACD007156BD /* mainFunc.swift */,
 			);
 			path = calculator;
 			sourceTree = "<group>";
@@ -271,7 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D719548206FFACD007156BD /* mainFunc.swift in Sources */,
 				5D561FC52067D166002C9256 /* functions.swift in Sources */,
 				5D287A5F2066DA9200D6ADF3 /* ViewController.swift in Sources */,
 				5D561FC120679A42002C9256 /* Stack.swift in Sources */,
